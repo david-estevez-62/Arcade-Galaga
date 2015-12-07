@@ -35,7 +35,7 @@ console.log(game)
 function preload() {
   game.scale._pageAlignHorizontally = true;
   game.scale._pageAlignVertically = true;
-  // game.stage.scale.refresh();
+  game.scale.refresh();
 
 	game.load.image('starfield', './assets/starfield.png')
 	game.load.image('ship', './assets/fighterJet.png');
