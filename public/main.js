@@ -30,8 +30,13 @@ var game = new Phaser.Game(
 	1050, 715, Phaser.CANVAS, '',
 	{ preload: preload, create: create, update: update}
 );
+console.log(game)
 
 function preload() {
+  game.scale._pageAlignHorizontally = true;
+  game.scale._pageAlignVertically = true;
+  // game.stage.scale.refresh();
+
 	game.load.image('starfield', './assets/starfield.png')
 	game.load.image('ship', './assets/fighterJet.png');
 	game.load.image('bullet', './assets/blueLaser.png');
