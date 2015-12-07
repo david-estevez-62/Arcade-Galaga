@@ -27,7 +27,7 @@ var livingEnemies = [];
 
 
 var game = new Phaser.Game(
-	1050, 750, Phaser.AUTO, '',
+	1050, 715, Phaser.CANVAS, '',
 	{ preload: preload, create: create, update: update}
 );
 
@@ -132,7 +132,7 @@ function create() {
             aliens1.y = 50;
             //  This is what allows the aliens to move
             var tween = game.add.tween(aliens1).to({x: 200}, 2000, Phaser.Easing.Circular.InOut, true, 9400, 100, true);
-            var tween2 = game.add.tween(aliens1).to({y: 510}, 2000, Phaser.Easing.Circular.InOut, true, 9200, 100, true);
+            var tween2 = game.add.tween(aliens1).to({y: 410}, 2000, Phaser.Easing.Circular.InOut, true, 9200, 100, true);
             //  When the tween completes it calls descend, before looping again
             tween.onComplete.add(descend, this);
         }
@@ -144,7 +144,7 @@ function create() {
 
 
 		function descend() {
-			aliens.y += 10;
+			aliens.y -= 10;
 		}
 
 		 //when the logo is clicked start the game and create object in this order
@@ -152,7 +152,7 @@ function create() {
 
 	     	game.hasStarted = true;
 	     	logo.destroy();
-	     	ship = game.add.sprite(game.world.centerX, 600, 'ship');
+	     	ship = game.add.sprite(game.world.centerX, 585, 'ship');
 	     	ship.isMoving = false;
 
 	     	
